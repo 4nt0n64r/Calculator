@@ -8,4 +8,5 @@
     <string name="firstnumber">Enter first number</string>
     <string name="secondnumber">Enter second number</string>
     <string name="snackHint">Invalid input, all fields must be filled!</string>
+    <string name="nullDivision">Division by zero!</string>
 </resources>

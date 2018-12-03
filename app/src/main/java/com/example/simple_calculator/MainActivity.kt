@@ -68,8 +68,18 @@ class MainActivity : AppCompatActivity() {
         division.setOnClickListener(){
             if (checkValidity(first,second)){
                 val returnableNumber = first.text.toString().toBigInteger() / second.text.toString().toBigInteger()
-                result.setText("${returnableNumber}")
-                sign.setText(R.string.division)
+                if (second.text.toString().toBigInteger() == 0.toBigInteger()){
+                    Snackbar.make(
+                        constr,
+                        R.string.snackHint,
+                        Snackbar.LENGTH_LONG
+                    ).show()
+                    sign.setText(R.string.nullDivision)
+                    result.setText("")
+                } else{
+                    result.setText("${returnableNumber}")
+                    sign.setText(R.string.division)
+                }
             } else{
                 Snackbar.make(
                     constr,
