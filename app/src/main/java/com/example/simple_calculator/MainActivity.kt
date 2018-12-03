@@ -67,16 +67,16 @@ class MainActivity : AppCompatActivity() {
 
         division.setOnClickListener(){
             if (checkValidity(first,second)){
-                val returnableNumber = first.text.toString().toBigInteger() / second.text.toString().toBigInteger()
                 if (second.text.toString().toBigInteger() == 0.toBigInteger()){
                     Snackbar.make(
                         constr,
-                        R.string.snackHint,
+                        R.string.nullDivision,
                         Snackbar.LENGTH_LONG
                     ).show()
-                    sign.setText(R.string.nullDivision)
+                    sign.setText(R.string.error)
                     result.setText("")
                 } else{
+                    val returnableNumber = first.text.toString().toBigInteger() / second.text.toString().toBigInteger()
                     result.setText("${returnableNumber}")
                     sign.setText(R.string.division)
                 }
